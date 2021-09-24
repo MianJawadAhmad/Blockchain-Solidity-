@@ -8,6 +8,7 @@ contract FundMe{
     using SafeMathChainlink for uint256;
     
     mapping(address => uint256) public addressAmountFunded;
+    address
     
     function fund() public payable {
         uint256 minimumUSD = 50 * 10 ** 18;
@@ -35,6 +36,8 @@ contract FundMe{
     }
     
     function withdraw() payable public {
+        //only want the contract admin/owner
+        // require msg.sender = owner
         msg.sender.transfer(address(this).balance)
     }
 }
