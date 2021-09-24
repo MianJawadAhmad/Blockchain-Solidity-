@@ -8,7 +8,9 @@ contract FundMe{
     using SafeMathChainlink for uint256;
     
     mapping(address => uint256) public addressAmountFunded;
-    address
+    constructor() public{
+        
+    }
     
     function fund() public payable {
         uint256 minimumUSD = 50 * 10 ** 18;
