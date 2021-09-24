@@ -8,8 +8,9 @@ contract FundMe{
     using SafeMathChainlink for uint256;
     
     mapping(address => uint256) public addressAmountFunded;
+    address public owner;
     constructor() public{
-        
+        owner = msg.sender;
     }
     
     function fund() public payable {
